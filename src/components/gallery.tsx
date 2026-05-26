@@ -53,7 +53,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
           <button
             key={photo.id}
             onClick={() => open(photo)}
-            className="group relative aspect-square overflow-hidden rounded-lg bg-neutral-100 focus-visible:outline-2 focus-visible:outline-blue-500 cursor-pointer"
+            className="group relative aspect-square overflow-hidden rounded-lg bg-neutral-700 focus-visible:outline-2 focus-visible:outline-blue-500 cursor-pointer"
           >
             <Image
               src={photo.src}
@@ -80,15 +80,18 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
           </button>
 
           <div
-            className="relative max-h-[90vh] max-w-[90vw]"
+            className="flex flex-col items-center gap-3"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={selected.src}
-              alt={selected.alt}
-              className="max-h-[85vh] max-w-[90vw] h-auto w-auto rounded-lg shadow-2xl"
-            />
+            <p className="text-sm text-white/80">{selected.alt}</p>
+            <div className="relative max-h-[80vh] max-w-[90vw]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={selected.src}
+                alt={selected.alt}
+                className="max-h-[80vh] max-w-[90vw] h-auto w-auto rounded-lg shadow-2xl"
+              />
+            </div>
           </div>
 
           <button
