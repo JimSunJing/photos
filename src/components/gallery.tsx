@@ -48,7 +48,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
 
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-3">
         {photos.map((photo) => (
           <button
             key={photo.id}
