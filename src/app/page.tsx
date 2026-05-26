@@ -9,6 +9,7 @@ export default function Home() {
           usky520的玩具
         </h1>
         <p className="mt-2 text-sm text-neutral-400">闲鱼账号：usky520 &nbsp;|&nbsp; 点击图片查看大图</p>
+        <p className="mt-1 text-sm text-neutral-500">所有模型都可以打印其他颜色</p>
       </header>
       <Gallery photos={photos} />
     </main>
