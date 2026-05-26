@@ -8,6 +8,7 @@ export default function Home() {
         <h1 className="text-2xl font-light tracking-wide text-neutral-800 sm:text-3xl">
           usky520的玩具
         </h1>
+        <p className="mt-2 text-sm text-neutral-400">闲鱼账号：usky520</p>
       </header>
       <Gallery photos={photos} />
     </main>
