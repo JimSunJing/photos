@@ -9,7 +9,7 @@ export default function Gallery({
   categories,
 }: {
   photos: Photo[];
-  categories: Category[];
+  categories: readonly Category[];
 }) {
   const [active, setActive] = useState<string>("全部");
   const [selected, setSelected] = useState<Photo | null>(null);
