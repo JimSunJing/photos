@@ -11,6 +11,7 @@ export const categories = [
   "肌肉展示中20cm",
   "脂包肌稍息12cm",
   "脂包肌稍息25cm",
+  "抱胸大叔15cm",
   "配件",
   "其他",
 ] as const;
@@ -167,5 +168,23 @@ export const photos: Photo[] = [
     src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n7MPNB5pn5Jt6Epgw89zD0j7TQ2ha1Xr4MyZH",
     alt: "脂包肌稍息25cm背面",
     category: "脂包肌稍息25cm",
+  },
+  {
+    id: "26",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n1QrNaNQjTgPABusxXKiGhSFW3ENVwC65z1Z2",
+    alt: "抱胸大叔15cm正面",
+    category: "抱胸大叔15cm",
+  },
+  {
+    id: "27",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8nyaW4WVhGdAwMPyuricRa2okqnUYZWf7gHBm6",
+    alt: "抱胸大叔15cm侧面",
+    category: "抱胸大叔15cm",
+  },
+  {
+    id: "28",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n3IVBspKGTK7dgnB8yJtOAUoMb1v6FPakS0cR",
+    alt: "抱胸大叔15cm背面",
+    category: "抱胸大叔15cm",
   },
 ];
