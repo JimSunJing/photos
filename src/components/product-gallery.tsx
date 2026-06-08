@@ -47,11 +47,12 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
   return (
     <>
       <div className="grid grid-cols-2 gap-3">
-        {photos.map((photo) => (
+        {photos.map((photo, i) => (
           <button
             key={photo.id}
             onClick={() => open(photo)}
-            className="group relative aspect-square overflow-hidden rounded-lg bg-neutral-700 focus-visible:outline-2 focus-visible:outline-blue-500 cursor-pointer"
+            style={{ animationDelay: `${i * 60}ms` }}
+            className="group relative aspect-square overflow-hidden rounded-xl bg-surface-2 ring-1 ring-white/5 transition-all duration-300 hover:ring-accent/40 hover:shadow-lg hover:shadow-accent/10 cursor-pointer animate-fade-up"
           >
             <Image
               src={photo.src}
@@ -60,13 +61,14 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
               className="object-cover transition duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 512px"
             />
+            <div className="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/10" />
           </button>
         ))}
       </div>
 
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md animate-fade-in"
           onClick={close}
         >
           <button
@@ -74,23 +76,23 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
               e.stopPropagation();
               prev();
             }}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 size-10 sm:size-12 flex items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition cursor-pointer text-2xl"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 size-11 sm:size-13 flex items-center justify-center rounded-full bg-black/50 text-accent-light/70 hover:bg-accent/20 hover:text-accent-light border border-white/10 hover:border-accent/40 transition-all duration-200 cursor-pointer text-2xl backdrop-blur-sm z-10"
             aria-label="上一张"
           >
             ‹
           </button>
 
           <div
-            className="flex flex-col items-center gap-3"
+            className="flex flex-col items-center gap-3 px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <p className="text-sm text-white/80">{selected.alt}</p>
+            <p className="text-sm text-white/70 font-body">{selected.alt}</p>
             <div className="relative max-h-[80vh] max-w-[90vw]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={selected.src}
                 alt={selected.alt}
-                className="max-h-[80vh] max-w-[90vw] h-auto w-auto rounded-lg shadow-2xl"
+                className="max-h-[80vh] max-w-[90vw] h-auto w-auto rounded-xl shadow-2xl ring-1 ring-white/10"
               />
             </div>
           </div>
@@ -100,7 +102,7 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
               e.stopPropagation();
               next();
             }}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 size-10 sm:size-12 flex items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition cursor-pointer text-2xl"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 size-11 sm:size-13 flex items-center justify-center rounded-full bg-black/50 text-accent-light/70 hover:bg-accent/20 hover:text-accent-light border border-white/10 hover:border-accent/40 transition-all duration-200 cursor-pointer text-2xl backdrop-blur-sm z-10"
             aria-label="下一张"
           >
             ›
@@ -108,13 +110,13 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
 
           <button
             onClick={close}
-            className="absolute top-4 right-4 size-10 flex items-center justify-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition cursor-pointer text-xl"
+            className="absolute top-4 right-4 size-10 flex items-center justify-center rounded-full bg-black/50 text-white/60 hover:bg-accent/20 hover:text-accent-light border border-white/10 hover:border-accent/40 transition-all duration-200 cursor-pointer text-lg backdrop-blur-sm"
             aria-label="关闭"
           >
             ✕
           </button>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-accent-light/80 text-xs px-3 py-1.5 rounded-full border border-white/10 font-body">
             {index + 1} / {photos.length}
           </div>
         </div>

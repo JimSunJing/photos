@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+@theme {
+  --color-accent: #CA8A04;
+  --color-accent-light: #EAB308;
+  --color-accent-muted: #A16207;
+  --color-surface: #1C1917;
+  --color-surface-2: #292524;
+  --color-surface-3: #44403C;
+  --font-heading: "Rubik", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(202, 138, 4, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(202, 138, 4, 0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(202, 138, 4, 0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
