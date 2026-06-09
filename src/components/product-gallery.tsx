@@ -68,7 +68,7 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
 
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 animate-fade-in"
+          className="fixed inset-0 z-50 bg-black animate-fade-in"
           onClick={close}
         >
           {/* Top bar */}
@@ -106,9 +106,9 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Fullscreen image */}
           <div
-            className="relative flex items-center justify-center"
+            className="absolute inset-0 flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -116,7 +116,7 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
               key={selected.id}
               src={selected.src}
               alt={selected.alt}
-              className="max-h-[85vh] max-w-[90vw] h-auto w-auto rounded-lg shadow-2xl ring-1 ring-white/[0.06] animate-fade-in select-none"
+              className="w-full h-full object-contain animate-fade-in select-none"
               draggable={false}
             />
           </div>
