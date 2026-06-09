@@ -94,6 +94,9 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
                 alt={selected.alt}
                 className="max-h-[80vh] max-w-[90vw] h-auto w-auto rounded-xl shadow-2xl ring-1 ring-white/10"
               />
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-accent-light/80 text-xs px-3 py-1 rounded-full border border-white/10 font-body pointer-events-none">
+                {index + 1} / {photos.length}
+              </div>
             </div>
           </div>
 
@@ -115,10 +118,6 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
           >
             ✕
           </button>
-
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-accent-light/80 text-xs px-3 py-1.5 rounded-full border border-white/10 font-body">
-            {index + 1} / {photos.length}
-          </div>
         </div>
       )}
     </>
