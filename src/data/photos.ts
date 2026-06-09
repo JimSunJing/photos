@@ -14,6 +14,9 @@ export const categories = [
   "脂包肌稍息12cm",
   "脂包肌稍息25cm",
   "抱胸大叔15cm",
+  "抱胸大叔20cm",
+  "龟甲缚大叔15cm",
+  "硅胶捏捏",
   "配件",
   "其他",
 ] as const;
@@ -24,7 +27,7 @@ export function productSlug(id: string): string {
   let hash = 0;
   for (let i = 0; i < id.length; i++) {
     const char = id.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
+    hash = (hash << 5) - hash + char;
     hash |= 0;
   }
   return Math.abs(hash).toString(36);
@@ -264,5 +267,61 @@ export const photos: Photo[] = [
     category: "抱胸大叔15cm",
     productId: "抱胸大叔15cm",
     dateAdded: "2026-05-25",
+  },
+  {
+    id: "29",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n7eo8sypn5Jt6Epgw89zD0j7TQ2ha1Xr4MyZH",
+    alt: "硅胶肌肉展示中7cm半身",
+    category: "硅胶捏捏",
+    productId: "硅胶捏捏",
+    dateAdded: "2026-06-09",
+  },
+  {
+    id: "30",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n99YutBMGIFiUXQElM8OHhCmfo1dwNK9ZjpV7",
+    alt: "硅胶肌肉展示中7cm半身正面",
+    category: "硅胶捏捏",
+    productId: "硅胶捏捏",
+    dateAdded: "2026-06-09",
+  },
+  {
+    id: "31",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8n7U0OOopn5Jt6Epgw89zD0j7TQ2ha1Xr4MyZH",
+    alt: "硅胶肌肉展示中7cm半身背面",
+    category: "硅胶捏捏",
+    productId: "硅胶捏捏",
+    dateAdded: "2026-06-09",
+  },
+  {
+    id: "32",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8nAPAb4tOmv8nw3jxFY0i4PSNrVytgQB9KURDZ",
+    alt: "抱胸大叔20cm正面",
+    category: "抱胸大叔20cm",
+    productId: "抱胸大叔20cm",
+    dateAdded: "2026-06-08",
+  },
+  {
+    id: "33",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8nLq0nKIkT60GEYe7P4xUFXDsnbRJgVrAvkNhf",
+    alt: "抱胸大叔20cm侧面",
+    category: "抱胸大叔20cm",
+    productId: "抱胸大叔20cm",
+    dateAdded: "2026-06-08",
+  },
+  {
+    id: "34",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8nP6haId4q5GjguEDa2mCUNLnp0xTohyFWbd94",
+    alt: "龟甲缚大叔15cm正面",
+    category: "龟甲缚大叔15cm",
+    productId: "龟甲缚大叔15cm",
+    dateAdded: "2026-06-09",
+  },
+  {
+    id: "35",
+    src: "https://os84zrjblr.ufs.sh/f/A3OWyvtOmv8nUJesw1qF78qWcyhKoVM0OGn9BgdjR6X3zxuI",
+    alt: "龟甲缚大叔15cm背面",
+    category: "龟甲缚大叔15cm",
+    productId: "龟甲缚大叔15cm",
+    dateAdded: "2026-06-09",
   },
 ];
