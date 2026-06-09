@@ -83,22 +83,20 @@ export default function ProductGallery({ photos }: { photos: Photo[] }) {
           </button>
 
           <div
-            className="flex flex-col items-center justify-center gap-3 px-4 h-full"
+            className="relative max-h-[90vh] max-w-[90vw]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative max-h-[90vh] max-w-[90vw]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={selected.src}
-                alt={selected.alt}
-                className="max-h-[90vh] max-w-[90vw] h-auto w-auto rounded-xl shadow-2xl ring-1 ring-white/10"
-              />
-              <p className="absolute top-3 left-3 text-xs text-white/70 font-body bg-black/50 backdrop-blur-sm px-2 py-1 rounded-md border border-white/10">
-                {selected.alt}
-              </p>
-              <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-accent-light/80 text-xs px-3 py-1 rounded-full border border-white/10 font-body pointer-events-none">
-                {index + 1} / {photos.length}
-              </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={selected.src}
+              alt={selected.alt}
+              className="max-h-[90vh] max-w-[90vw] h-auto w-auto rounded-xl shadow-2xl ring-1 ring-white/10"
+            />
+            <p className="absolute top-3 left-3 text-xs text-white/70 font-body bg-black/50 backdrop-blur-sm px-2 py-1 rounded-md border border-white/10">
+              {selected.alt}
+            </p>
+            <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-accent-light/80 text-xs px-3 py-1 rounded-full border border-white/10 font-body pointer-events-none">
+              {index + 1} / {photos.length}
             </div>
           </div>
 
