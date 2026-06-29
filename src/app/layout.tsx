@@ -15,8 +15,8 @@ const nunito = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "usky520的玩具",
-  description: "usky520的玩具",
+  title: "MuskyShop",
+  description: "MuskyShop",
 };
 
 export default function RootLayout({
